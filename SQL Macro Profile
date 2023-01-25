@@ -25,3 +25,5 @@ app = { # REQUIRED dict, must be named 'app'
         (0x000000, 'RUN', [Keycode.CONTROL, Keycode.ENTER]),
         # Encoder button ---
         (0x000000, '', [Keycode.CONTROL, 'w']) # Close window/tab
+       ]
+      }

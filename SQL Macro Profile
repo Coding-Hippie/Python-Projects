@@ -1,0 +1,27 @@
+#Author Jacob Stack
+# SPDX-License-Identifier: MIT
+
+from adafruit_hid.keycode import Keycode # REQUIRED if using Keycode.* values
+
+app = { # REQUIRED dict, must be named 'app'
+    'name' : 'SQL Programming', # Application name
+    'macros' : [ # List of button macros for SQL programming
+        # COLOR     LABEL     KEY SEQUENCE
+        # 1st row ----------
+        (0x000000, 'SELECT', ['SELECT * FROM']),
+        (0x000000, 'DIST', [' SELECT DISTINCT * FROM']),
+        (0x000000, 'WHERE', ['WHERE']),
+        # 2nd row ----------
+        (0x000000, 'JOIN', ['JOIN']),
+        (0x000000, 'CAST', ['CAST(() AS ())']),
+        (0x000000, 'DATE', ['DATEADD(DAY, , GETDATE())']),
+        # 3rd row ----------
+        (0x000000, 'ORDER', ['ORDER BY']),
+        (0x000000, 'GROUP', ['GROUP BY']),
+        (0x000000, 'CASE', ['CASE WHEN  THEN']),
+        # 4th row ----------
+        (0x000000, 'PASTE', [Keycode.CONTROL, 'v']),
+        (0x000000, 'Beautify', [Keycode.CONTROL, Keycode.SHIFT, 'f']),
+        (0x000000, 'RUN', [Keycode.CONTROL, Keycode.ENTER]),
+        # Encoder button ---
+        (0x000000, '', [Keycode.CONTROL, 'w']) # Close window/tab

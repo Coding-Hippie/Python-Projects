@@ -18,15 +18,12 @@ app = {# REQUIRED dict, must be named 'app'
         # 3rd row ----------
         (0x000090, 'POS', ['t.setpos(,)']),
         (0x000090, 'Home', ['t.home']),
-        (0x000090, '', [Keycode.CONTROL, 't', -Keycode.CONTROL,
-                               '\n']),
+        (0x000090, 'Circle', ['t.circle()']),
         # 4th row ----------
-        (0x004200, 'Udemy', [Keycode.CONTROL, 't', -Keycode.CONTROL,
-                           'https://www.udemy.com/home/my-courses/learning\n']), # adafruit.com in a new tab
-        (0x900090, 'Dev Mode', [Keycode.F12]), # dev mode
-        (0x004200, '', [Keycode.CONTROL, 't', -Keycode.CONTROL,
-                            '\n'])#
+        (0x004200, 'Dot', ['t.dot( ,"")'']), # adafruit.com in a new tab
+        (0x900090, 'Stamp', ['t.stamp()']), # dev mode
+        (0x004200, 'Speed', ['t.speed()'])#
         # Encoder button ---
-        (0x000000, '', [Keycode.CONTROL, 'w']) # Close window/tab
+        (0x000000, 'undo', ['t.undo()']) # Close window/tab
     ]
 }

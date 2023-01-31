@@ -4,22 +4,20 @@
 from adafruit_hid.keycode import Keycode # REQUIRED if using Keycode.* values
 
 app = {# REQUIRED dict, must be named 'app'
-    'name' : '', # Application name
+    'name' : 'Turtle - Python ', # Application name
     'macros' : [# List of button macros...
         # COLOR    LABEL    KEY SEQUENCE
         # 1st row ----------
-        (0x030797, '< Back', [Keycode.CONTROL, '[']),
-        (0x092394, 'Fwd >', [Keycode.CONTROL, ']']),
-        (0x072019, '', [Keycode.CONTROL, 't', -Keycode.CONTROL,
-                               '\n']), #
+        (0x030797, 'Import', ['import turtle \n t = turtle.Turtle() ']),
+        (0x092394, 'FD', ['t.fd()']),
+        (0x072019, 'BK', ['t.bk()']), #
         # 2nd row ----------
-        (0x069420, '< Tab', [Keycode.CONTROL, Keycode.SHIFT, Keycode.TAB]),
-        (0x071517, 'Tab >', [Keycode.CONTROL, Keycode.TAB]),
-        (0x007200, '', [Keycode.CONTROL, 't', -Keycode.CONTROL,
-                              '\n']), #
+        (0x069420, 'P-up', ['t.penup()']),
+        (0x071517, 'P-Down', ['t.pendown()']),
+        (0x007200, 'Head', ['t.seth()']), #
         # 3rd row ----------
-        (0x000090, 'Reload', [Keycode.CONTROL, 'r']),
-        (0x000090, 'Home', [Keycode.CONTROL, 'h']),
+        (0x000090, 'POS', ['t.setpos(,)']),
+        (0x000090, 'Home', ['t.home']),
         (0x000090, '', [Keycode.CONTROL, 't', -Keycode.CONTROL,
                                '\n']),
         # 4th row ----------

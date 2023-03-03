@@ -12,11 +12,11 @@ app = {# REQUIRED dict, must be named 'app'
         # 1st row ----------
         (0x073079, '< Home', [Keycode.CONTROL, 'a']),# Moves to the beginning of cmd line
         (0x090049, 'End >', [Keycode.CONTROL, 'e']), #Moves to the end of cmd line
-        (0x072019, 'Lol-Cat',[""" lolcat """]), # Input URL
+        (0x072019, 'Lol-Cat',[""" lolcat """]), # LOL-Cat - rainbow text(sudo apt-get install lolcat)
         # 2nd row ----------
-        (0x024960, 'Freeze', [Keycode.CONTROL, 's']),
-        (0x071517, 'Unfreeze', [Keycode.CONTROL, 'q']),
-        (0x007200, 'Figlet', [""" figlet """]), # Input URL
+        (0x024960, 'Freeze', [Keycode.CONTROL, 's']),#Freezes terminal 
+        (0x071517, 'Unfreeze', [Keycode.CONTROL, 'q']),#unfreezes terminal
+        (0x007200, 'Figlet', [""" figlet """]), # Figlet banner (sudo apt install figlet)
         # 3rd row ----------
         (0x000090, 'Clear', [""" clear """]), #cleans terminal screen 
         (0x000090, 'Term', [Keycode.CONTROL, 'c']), #Terminates working command

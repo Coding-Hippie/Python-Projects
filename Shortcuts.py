@@ -1,7 +1,7 @@
 # SPDX-FileCopyright Text: 2023 Jacob Stack
 # SPDX-License-Identifier: MIT
 
-# MACROPAD Hotkeys: For adafruit RP2040 Macro Pad
+# MACROPAD Hotkeys: For use with adafruit RP2040 Macro Pad
 
 from adafruit_hid.keycode import Keycode # REQUIRED if using Keycode.* values
 

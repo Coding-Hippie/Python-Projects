@@ -1,0 +1,80 @@
+# Jacob Stack
+
+# Define the rooms and their connections in a dictionary
+rooms = {
+    "start": {"north": "room1", "west": "room3", "east": "room2"},
+    "room1": {"west": "room3", "east": "room2", "north": "room4", "secret2": "room8"},
+    "room2": {"north": "room6", "south": "room5"},
+    "room3": {"south": "room7"},
+    "room4": {"east": "room6"},
+    "room5": {"west": "room7"},
+    "room6": {"west": "room4", "secret1": "room1"},
+    "room7": {"north": "room3", "east": "room5"},
+    "room8": {"south": "room3", "east": "room4"},
+    "Alien Scourge": {"room7"},
+    "exit": {}
+}
+
+room_items = {
+    "start": None,
+    "room1": "Item 2",
+    "room2": "Item 1",
+    "room3": "Item 5",
+    "room4": "Item 6",
+    "room5": "Item 3",
+    "room6": None,
+    "room7": None,
+    "room8": "Item 4",
+    "Villain": None
+}
+
+# Initialize the player's inventory
+inventory = []
+
+# Initialize the player's current room
+current_room = "start"
+
+# Gameplay loop
+while current_room != "exit" and len(inventory) < 6:
+    # Display the current room
+    print(f"You are in the {current_room}.")
+
+    # Prompt the player for a command
+    command = input("Enter a command (e.g., 'go North', 'exit'): ").strip().lower().split()
+
+    if len(command) == 2 and command[0] == "go":
+        direction = command[1]
+        # Check if the direction is valid for the current room
+        if direction in rooms[current_room]:
+            current_room = rooms[current_room][direction]
+        else:
+            print("Invalid direction! Try again.")
+    elif command == ["exit"]:
+        current_room = "exit"
+    else:
+        print("Invalid command! Try again.")
+
+    # Check if the player can move in the specified direction
+    if current_room == "exit":
+        break
+    elif current_room in room_items:
+        current_item = room_items[current_room]
+        if current_item is not None:
+            print(f"You see a {current_item}.")
+            user_input = input(f"Do you want to get {current_item}? (yes/no): ").strip().lower()
+
+            if user_input == "yes":
+                inventory.append(current_item)
+                room_items[current_room] = None
+                print(f"{current_item} retrieved!")
+            elif user_input != "no":
+                print("Invalid input! Please enter 'yes' or 'no'.")
+
+# Game over
+if "Alien Scourge" in current_room:
+    print("ZAP ZAP…GAME OVER! You encountered the Alien Scourge.")
+else:
+    if len(inventory) == 6:
+        print("Congratulations! You collected all items and survived the Space Adventure!")
+    else:
+        print("You successfully exited the game, but you didn't collect all the items.")
